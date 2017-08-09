@@ -1,21 +1,50 @@
 <head>
   <title>pastak生誕祭2017</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.0/vue.js'></script>
   <script src='js/glitch-canvas-browser.min.js'></script>
   <link href="https://fonts.googleapis.com/css?family=Saira:500" rel="stylesheet">
   <link rel='stylesheet' href='./css/main.css' />
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' />
 </head>
 <body>
   <main id='main'>
     <img id='mainVisual' src='img/main.jpg' />
     <h1>pastak生誕祭2017</h1>
 
-  Date: 2017/09/17(Sun) 15:00〜21:00 @ <a href='https://dj-bar-space.jimdo.com/'>WHITE SPACE LAB</a>, Shibuya, Tokyo<br />
-  <br />
-  <br />
-  DJs & VJs are Comming soon...<br />
-  <br />
-  <a href='https://pastak-anniv-slack-invite.herokuapp.com/' target='_blank'>Join our Slack!!!!!!!!!!!!!!!!!!!!</a>
-  <br />
-  Repository is here: <a href='https://github.com/pastak-anniv/pastak-anniv.github.io' target='_blank'>https://github.com/pastak-anniv/pastak-anniv.github.io</a>
+    Date: 2017/09/17(Sun) 15:00〜21:00 @ <a href='https://dj-bar-space.jimdo.com/'>WHITE SPACE LAB</a>, Shibuya, Tokyo<br />
+    <br />
+    <a href='https://pastak-anniv-slack-invite.herokuapp.com/' target='_blank'>Join our Slack!!!!!!!!!!!!!!!!!!!!</a>
+    <br />
+    <h2>Performers</h2>
+      <div id='performers'>
+        <div class='performer' v-for='performer in performers'>
+          <img v-bind:src='performer.icon' class='icon'/>
+          <div class='name'>[{{ performer.role }}]{{ performer.name }}</div>
+          <div class='genre'>Genre: {{ performer.genre }}</div>
+
+          <div class='websites'>
+            <a v-if='performer.twitter' v-bind:href='performer.twitterUrl' target='_blank'>
+              <i class="fa fa-twitter" aria-hidden="true"></i>{{ performer.twitter }}
+            </a>
+            <a v-if='performer.soundcloud' v-bind:href='performer.soundcloudUrl' target='_blank'>
+              <i class="fa fa-soundcloud" aria-hidden="true"></i>{{ performer.soundcloud }}
+            </a>
+            <a v-if='performer.website' v-bind:href='performer.website' target='_blank'>
+              <i class="fa fa-globe" aria-hidden="true"></i>website
+            </a>
+          </div>
+          <div class='introduce'>{{ performer.introduce }}</div>
+        </div>
+      </div>
+      <div style='font-size: 1.2em; text-align: center;'>
+        ... and more!
+      </div>
+    <br />
+    <h2>Timetable</h2>
+    Comming soon...
+    <br />
+    <hr />
+    Repository is here: <a href='https://github.com/pastak-anniv/pastak-anniv.github.io' target='_blank'>https://github.com/pastak-anniv/pastak-anniv.github.io</a>
+  </main>
   <script src='js/main.js'></script>
 </body>

@@ -27,4 +27,23 @@
   mainVisualElement.addEventListener('error', () => {
     mainVisualElement.src = './img/main.jpg'
   })
+
+  window.fetch('https://script.googleusercontent.com/macros/echo?user_content_key=G9mLr5qFRfacSf8ZQLHqWbjFtWF9J6w4MsU_b6TtJVq8-FypIYvDihz0u8Kv7y_kG-qmfYhO379iVn3Co4N31T-xYQJfeJsPm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnMeBMJ8O4iJF_xIkjO_aX6cJp8BmOYgJRvPTYAVyaYRXKzBcIKtqBW0M8tGjeb2XmUW-dnclfdIe&lib=MlvES5UVJUJx1V4fkzaJs1r3tUZn2Fw3D')
+    .then((res) => res.json())
+    .then((performers) => performers.map(performer => {
+      performer.twitter = performer.twitter.replace(/^https?:\/\/twitter\.com\//,'')
+      performer.twitterUrl = `https://twitter.com/${performer.twitter}`
+      performer.soundcloud = performer.soundcloud.replace(/^https?:\/\/soundcloud\.com\//, '')
+      performer.soundcloudUrl = `https://soundcloud.com/${performer.twitter}`
+      return performer
+    }))
+    .then((performers) => {
+      console.log(performers)
+      const performersApp = new Vue({
+        el: '#performers',
+        data: {
+          performers: performers
+        }
+      })
+    })
 })()

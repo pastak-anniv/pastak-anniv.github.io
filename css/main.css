@@ -8,3 +8,43 @@ body {
   margin: auto;
   display: block;
 }
+
+#performers {
+  margin: auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 45% 45%;
+}
+
+.performer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 65%;
+  grid-template-rows: max-content;
+  grid-template-areas: 'a b'
+                       'a c'
+                       'a d'
+                       'e e'
+}
+
+.performer > .icon {
+  grid-area: a;
+  max-width: 100%;
+}
+
+.performer > .name {
+  font-size: 1.3em;
+  grid-area: b;
+}
+
+.performer > .genre {
+  grid-area: c;
+}
+
+.performer > .websites {
+  grid-area: d;
+}
+
+.performer > .introduce {
+  grid-area: e;
+}
