@@ -48,3 +48,11 @@ body {
 .performer > .introduce {
   grid-area: e;
 }
+
+@media (max-width: 720px) {
+  #performers {
+    margin: auto;
+    width: 90%;
+    display: block;
+  }
+}
