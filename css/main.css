@@ -9,6 +9,12 @@ body {
   display: block;
 }
 
+#leftTime {
+  background: rgb(5, 228, 34);
+  color: rgb(242, 0, 0);
+  margin: 0;
+}
+
 #performers {
   margin: auto;
   width: 90%;

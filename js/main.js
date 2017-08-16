@@ -24,6 +24,7 @@
   } else {
     mainVisualImage.addEventListener('load', glitchMainVisual)
   }
+
   mainVisualElement.addEventListener('error', () => {
     mainVisualElement.src = './img/main.jpg'
   })
@@ -46,4 +47,23 @@
         }
       })
     })
+
+    const updateLeftTimeElement = document.getElementById('leftTime')
+    const updateLeftTime = () => {
+      const startTime = 1505628000000 // Date.parse('2017/09/17 15:00+09:00')
+      const leftTime = Math.floor((startTime - Date.now()) / 1000)
+
+      let t = null
+
+      const days = Math.floor(leftTime / (60 * 60 * 24))
+      t = leftTime % (60 * 60 * 24)
+      const hour = Math.floor(t / (60 * 60))
+      t = t % (60 * 60)
+      const min = Math.floor(t / 60)
+      const sec = t % 60
+
+      updateLeftTimeElement.textContent = `開催まで残り${days}日${hour}時間${min}分${sec}秒!!!!!!!!!!`
+      window.requestAnimationFrame(updateLeftTime)
+    }
+    updateLeftTime()
 })()
