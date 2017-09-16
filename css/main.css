@@ -18,6 +18,11 @@ a {
   margin: 0;
 }
 
+#leftTime.openning {
+  background: rgb(242, 0, 0);
+  color: rgb(5, 228, 34);
+}
+
 #performers {
   margin: auto;
   width: 90%;

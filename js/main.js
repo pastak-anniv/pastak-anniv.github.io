@@ -52,6 +52,11 @@
     const updateLeftTime = () => {
       const startTime = 1505628000000 // Date.parse('2017/09/17 15:00+09:00')
       const leftTime = Math.floor((startTime - Date.now()) / 1000)
+      if (leftTime < 0) {
+        updateLeftTimeElement.textContent = '!!!!!! 現在開催中!今すぐ会場へGo !!!!!!'
+        updateLeftTimeElement.scrollAmount = 40
+        return
+      }
 
       let t = null
 
