@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  width: 90vw;
+  margin: 0 5vw;
+  font-family: 'Saira', sans-serif;
+  font-size: 20px;
+}
+a {
+  color: #2000F8;
+}
+#performers {
+  margin: auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 45% 45%;
+}
+
+.performer {
+  width: 100%;
+  display: grid;
+  margin-bottom: 3vh;
+  grid-template-columns: 20% 20% 45% 10%;
+  grid-template-rows: max-content;
+  grid-template-areas: 'a a b b'
+                       'a a c c'
+                       'd d f f'
+                       'e e e e'
+}
+
+.performer > .icon {
+  grid-area: a;
+  max-width: 100%;
+}
+
+.performer > .name {
+  font-size: 1.3em;
+  grid-area: b;
+}
+
+.performer > .genre {
+  grid-area: c;
+}
+
+.performer > .link.twitter {
+  grid-area: d;
+}
+.performer > .link.soundcloud {
+  grid-area: f;
+}
+
+.performer > .link {
+  font-size: 14px;
+}
+
+.performer > .comment {
+  grid-area: e;
+  font-size: 15px;
+}
+
+@media (max-width: 720px) {
+  #performers {
+    margin: auto;
+    width: 90%;
+    display: block;
+  }
+}
