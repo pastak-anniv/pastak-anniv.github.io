@@ -1,5 +1,10 @@
 body {
+  font-family: 'Saira', sans-serif;
+  font-size: 20px;
   margin: 0;
+  padding: 0;
+}
+.wrapper {
   width: 90vw;
   margin: 0 5vw;
   font-family: 'Saira', sans-serif;
@@ -8,6 +13,20 @@ body {
 a {
   color: #2000F8;
 }
+
+#leftTime {
+  background: rgb(5, 228, 34);
+  color: rgb(242, 0, 0);
+  margin: 0;
+  position: sticky;
+  top: 0;
+}
+
+#leftTime.openning {
+  background: rgb(242, 0, 0);
+  color: rgb(5, 228, 34);
+}
+
 #performers {
   margin: auto;
   width: 90%;
