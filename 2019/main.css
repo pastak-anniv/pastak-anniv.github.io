@@ -18,7 +18,7 @@ a {
 .performer {
   width: 100%;
   display: grid;
-  margin-bottom: 3vh;
+  margin-bottom: 7vh;
   grid-template-columns: 20% 20% 45% 10%;
   grid-template-rows: max-content;
   grid-template-areas: 'a a b b'
@@ -49,12 +49,12 @@ a {
 }
 
 .performer > .link {
-  font-size: 14px;
+  font-size: 1.0em;
 }
 
 .performer > .comment {
   grid-area: e;
-  font-size: 15px;
+  font-size: 1.1em;
 }
 
 @media (max-width: 720px) {
