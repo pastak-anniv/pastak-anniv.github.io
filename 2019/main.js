@@ -2,7 +2,7 @@
 ;(() => {
     const updateLeftTimeElement = document.getElementById('leftTime')
     const updateLeftTime = () => {
-      const startTime = Date.parse('2019/09/15 16:00+09:00')
+      const startTime = 1568530800000; // Date.parse('2019/09/15 16:00+09:00')
       const leftTime = Math.floor((startTime - Date.now()) / 1000)
       if (leftTime < 0) {
         updateLeftTimeElement.textContent = '!!!!!! 現在開催中!今すぐ会場へGo !!!!!!'
