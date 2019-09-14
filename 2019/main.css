@@ -3,7 +3,13 @@ body {
   font-size: 20px;
   margin: 0;
   padding: 0;
+  width: 100vw;
 }
+
+img {
+  max-width: 100%;
+}
+
 .wrapper {
   width: 90vw;
   margin: 0 5vw;
@@ -20,6 +26,15 @@ a {
   margin: 0;
   position: sticky;
   top: 0;
+}
+
+body.from-dpz {
+  background-color: #FCD10D;
+}
+
+#leftTime {
+  background: rgb(5, 228, 34);
+  color: rgb(242, 0, 0);
 }
 
 #leftTime.openning {

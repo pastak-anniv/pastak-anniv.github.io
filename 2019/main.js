@@ -23,4 +23,7 @@
       window.requestAnimationFrame(updateLeftTime)
     }
     updateLeftTime()
+    if (/ref=dpz/.test(location.search)) {
+      document.body.classList.add('from-dpz')
+    }
 })()
